@@ -32,6 +32,8 @@ RUN apt-get -y install --fix-missing \
     libonig-dev \
     libxml2-dev
 
+WORKDIR /var/www
+
 # Create a new user "myuser" and switch to it
 RUN adduser --disabled-password defaultuser
 USER defaultuser
