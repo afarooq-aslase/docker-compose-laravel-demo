@@ -44,5 +44,7 @@ RUN apt-get -y install --fix-missing \
 # Copy the entrypoint script into the container
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
 # Set the script as the entrypoint
 ENTRYPOINT ["entrypoint.sh"]
