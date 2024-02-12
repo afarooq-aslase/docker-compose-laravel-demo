@@ -33,6 +33,8 @@ RUN apt-get -y install --fix-missing \
     libxml2-dev
 
 # Entrypoint executes after the container is started
+CMD ["php-fpm"]
+
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
