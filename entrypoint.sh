@@ -22,7 +22,7 @@ php artisan route:clear
 
 
 # Run Laravel Artisan commands
-php artisan migrate --force
+# php artisan migrate --force
 php artisan key:generate
 
 # Continue with the main process (e.g., starting Apache or PHP-FPM)
