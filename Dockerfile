@@ -40,9 +40,3 @@ RUN apt-get -y install --fix-missing \
 # RUN npm install npm@latest -g && \
 #     npm install n -g && \
 #     n latest
-
-# Copy the entrypoint script into the container
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-
-# Set the script as the entrypoint
-ENTRYPOINT ["entrypoint.sh"]
