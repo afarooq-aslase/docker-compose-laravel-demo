@@ -18,10 +18,10 @@ services:
     image: mysql
     container_name: mysql
     ports:
-      - '3308:3306'
+      - '${DB_PORT}:3306'
     environment:
-      MYSQL_DATABASE: demo
-      MYSQL_ROOT_PASSWORD: secreto
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
 
   #PHPMyAdmin
   pma:
@@ -35,11 +35,11 @@ services:
   #Laravel Image
   app:
     container_name: app
+    volumes:
+      - .:/var/www
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - .:/var/www
     ports:
       - "9000:9000"
     working_dir: /var/www

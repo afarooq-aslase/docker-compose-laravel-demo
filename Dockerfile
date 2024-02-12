@@ -33,8 +33,8 @@ RUN apt-get -y install --fix-missing \
     libxml2-dev
 
 # Fix directory permissions
-RUN chown -R www-data:www-data storage bootstrap/cache
-RUN chmod -R 775 storage bootstrap/cache
+RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
+RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache
 
 # Install Node
 # RUN echo "\e[1;33mInstall NodeJs\e[0m"
