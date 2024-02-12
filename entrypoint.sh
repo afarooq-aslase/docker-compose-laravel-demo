@@ -10,7 +10,7 @@ chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 cd /var/www
 
 # Install composer deps
-RUN composer install --optimize-autoloader --no-dev
+composer install --optimize-autoloader --no-dev
 
 # Run Laravel Artisan commands
 # clear cache
