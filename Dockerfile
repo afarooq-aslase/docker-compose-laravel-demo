@@ -35,8 +35,7 @@ RUN apt-get -y install --fix-missing \
 # Entrypoint executes after the container is started
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
-ENTRYPOINT ["entrypoint.sh"]
-
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 
 # Install Node
