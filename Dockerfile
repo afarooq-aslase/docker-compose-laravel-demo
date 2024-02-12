@@ -32,9 +32,11 @@ RUN apt-get -y install --fix-missing \
     libonig-dev \
     libxml2-dev
 
-# Fix directory permissions
-RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
-RUN chmod -R 775 /var/www/storage /var/www/bootstrap/cache
+# Entrypoint executes after the container is started
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+
 
 # Install Node
 # RUN echo "\e[1;33mInstall NodeJs\e[0m"

@@ -1,4 +1,9 @@
 #!/bin/bash
+# Create the storage and bootstrap/cache directories if they don't exist
+mkdir -p /var/www/storage /var/www/bootstrap/cache
+
+# Set the correct permissions
+chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 # Navigate to the Laravel root directory (adjust the path as needed)
 cd /var/www
