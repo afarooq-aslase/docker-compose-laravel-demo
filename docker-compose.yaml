@@ -3,7 +3,7 @@ services:
 
   #nginx
   web:
-    image: nginx/alpine
+    image: nginx:alpine
     container_name: nginx
     ports:
       - '8025:80'
