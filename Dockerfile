@@ -32,6 +32,11 @@ RUN apt-get -y install --fix-missing \
     libonig-dev \
     libxml2-dev
 
+#RUN Project cmds
+RUN composer install \
+    php artisan migrate \
+    php artisan key:generate
+
 # Install Node
 # RUN echo "\e[1;33mInstall NodeJs\e[0m"
 # RUN apt-get install -y \
