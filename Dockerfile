@@ -32,18 +32,6 @@ RUN apt-get -y install --fix-missing \
     libonig-dev \
     libxml2-dev
 
-WORKDIR /var/www/docker-compose-laravel-demo
-
-# Create a new user "myuser" and switch to it
-RUN adduser --disabled-password defaultuser
-USER defaultuser
-
-#RUN Project cmds
-RUN composer install --no-interaction --prefer-dist --optimize-autoloader
-
-RUN php artisan migrate \
-    && php artisan key:generate
-
 # Install Node
 # RUN echo "\e[1;33mInstall NodeJs\e[0m"
 # RUN apt-get install -y \
@@ -52,3 +40,9 @@ RUN php artisan migrate \
 # RUN npm install npm@latest -g && \
 #     npm install n -g && \
 #     n latest
+
+# Copy the entrypoint script into the container
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+# Set the script as the entrypoint
+ENTRYPOINT ["entrypoint.sh"]
