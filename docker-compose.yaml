@@ -12,6 +12,7 @@ services:
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     depends_on:
       - app
+      - db
     networks:
       - app-net
 
