@@ -12,6 +12,8 @@ services:
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     depends_on:
       - app
+    networks:
+      - app_net
 
   #MySQL
   db:
@@ -22,6 +24,8 @@ services:
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - app_net
 
   #PHPMyAdmin
   pma:
@@ -31,6 +35,8 @@ services:
       - "3401:80"
     depends_on:
       - db
+    networks:
+      - app_net
 
   #Laravel Image
   app:
@@ -45,3 +51,5 @@ services:
     working_dir: /var/www
     depends_on:
       - db
+    networks:
+      - app_net
