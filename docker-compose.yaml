@@ -43,3 +43,5 @@ services:
     ports:
       - "9000:9000"
     working_dir: /var/www
+    depends_on:
+      - db
