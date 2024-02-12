@@ -18,7 +18,7 @@ services:
 
   #MySQL
   db:
-    image: mysql
+    image: mysql:5.7
     container_name: mysql
     ports:
       - '${DB_PORT}:3306'
