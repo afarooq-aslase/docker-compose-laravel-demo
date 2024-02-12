@@ -34,8 +34,8 @@ RUN apt-get -y install --fix-missing \
 
 #RUN Project cmds
 RUN composer install \
-    php artisan migrate \
-    php artisan key:generate
+    && php artisan migrate \
+    && php artisan key:generate
 
 # Install Node
 # RUN echo "\e[1;33mInstall NodeJs\e[0m"
