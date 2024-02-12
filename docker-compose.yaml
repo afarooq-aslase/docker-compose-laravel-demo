@@ -13,7 +13,7 @@ services:
     depends_on:
       - app
     networks:
-      - app_net
+      - app-net
 
   #MySQL
   db:
@@ -25,7 +25,7 @@ services:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     networks:
-      - app_net
+      - app-net
 
   #PHPMyAdmin
   pma:
@@ -36,7 +36,7 @@ services:
     depends_on:
       - db
     networks:
-      - app_net
+      - app-net
 
   #Laravel Image
   app:
@@ -52,4 +52,9 @@ services:
     depends_on:
       - db
     networks:
-      - app_net
+      - app-net
+
+#Networks
+networks:
+  app-net:
+    driver: bridge
