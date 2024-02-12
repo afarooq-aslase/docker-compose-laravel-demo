@@ -32,6 +32,10 @@ RUN apt-get -y install --fix-missing \
     libonig-dev \
     libxml2-dev
 
+# Create a new user "myuser" and switch to it
+RUN adduser -D defaultuser
+USER defaultuser
+
 #RUN Project cmds
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
