@@ -33,10 +33,10 @@ RUN apt-get -y install --fix-missing \
     libxml2-dev
 
 # Install Node
-RUN echo "\e[1;33mInstall NodeJs\e[0m"
-RUN apt-get install -y \
-    software-properties-common \
-    npm
-RUN npm install npm@latest -g && \
-    npm install n -g && \
-    n latest
+# RUN echo "\e[1;33mInstall NodeJs\e[0m"
+# RUN apt-get install -y \
+#     software-properties-common \
+#     npm
+# RUN npm install npm@latest -g && \
+#     npm install n -g && \
+#     n latest

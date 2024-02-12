@@ -8,7 +8,7 @@ services:
     ports:
       - '8025:80'
     volumes:
-      # - .:/var/www
+      - .:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     depends_on:
       - app
@@ -38,8 +38,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    # volumes:
-      # - .:/var/www
+    volumes:
+      - .:/var/www
     ports:
       - "9000:9000"
     working_dir: /var/www
