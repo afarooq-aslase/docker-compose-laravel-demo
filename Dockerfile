@@ -35,10 +35,6 @@ RUN apt-get -y install --fix-missing \
     libonig-dev \
     libxml2-dev
 
-
-# Install composer
-RUN composer install --optimize-autoloader --no-dev
-
 # Entrypoint executes after the container is started
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh

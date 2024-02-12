@@ -5,8 +5,11 @@ mkdir -p /var/www/storage /var/www/bootstrap/cache
 # Set the correct permissions
 chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
-# Navigate to the Laravel root directory
+# Navigate to the Laravel root directory (adjust the path as needed)
 cd /var/www
+
+# Install composer deps
+RUN composer install --optimize-autoloader --no-dev
 
 # ensure env is loaded (should be set in volume before deployment)
 stat .env
