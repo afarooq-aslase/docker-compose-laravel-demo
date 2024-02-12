@@ -33,8 +33,9 @@ RUN apt-get -y install --fix-missing \
     libxml2-dev
 
 #RUN Project cmds
-RUN composer install \
-    && php artisan migrate \
+RUN composer install --no-interaction --prefer-dist --optimize-autoloader
+
+RUN php artisan migrate \
     && php artisan key:generate
 
 # Install Node
