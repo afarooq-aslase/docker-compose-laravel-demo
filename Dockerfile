@@ -1,7 +1,5 @@
 FROM php:8.2.11-fpm
 
-WORKDIR /var/www
-
 # Install composer
 RUN echo "\e[1;33mInstall COMPOSER\e[0m"
 RUN cd /tmp \
@@ -9,7 +7,6 @@ RUN cd /tmp \
     && mv composer.phar /usr/local/bin/composer
 
 RUN docker-php-ext-install pdo pdo_mysql
-RUN cd ..
 
 RUN apt-get update
 
@@ -39,6 +36,8 @@ RUN apt-get -y install --fix-missing \
 COPY entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
+
+
 
 # Install Node
 # RUN echo "\e[1;33mInstall NodeJs\e[0m"
