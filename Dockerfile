@@ -7,6 +7,7 @@ RUN cd /tmp \
     && mv composer.phar /usr/local/bin/composer
 
 RUN docker-php-ext-install pdo pdo_mysql
+RUN cd ..
 
 RUN apt-get update
 
