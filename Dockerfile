@@ -1,5 +1,7 @@
 FROM php:8.2.11-fpm
 
+WORKDIR /var/www
+
 # Install composer
 RUN echo "\e[1;33mInstall COMPOSER\e[0m"
 RUN cd /tmp \
